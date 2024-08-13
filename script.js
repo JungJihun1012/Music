@@ -1,12 +1,12 @@
 const pianoKeys = document.querySelectorAll(".piano-keys .key");
-volumeSlider = document.querySelector(".volume-slider input");
-keysCheckbox = document.querySelector(".keys-checkbox input");
+const volumeSlider = document.querySelector(".volume-slider input");
+const keysCheckbox = document.querySelector(".keys-checkbox input");
 
 let allKeys = [],
 audio = new Audio("sounds/*");
 
 const playTune = (key) => {
-    audio.src = `sounds/${key}.wav`;
+    audio.src = `sounds/${key}.m4a`;
     audio.play();
 
     const clickedKey = document.querySelector(`[data-key="${key}"]`);
@@ -38,3 +38,4 @@ const pressedKey = (e) => {
 keysCheckbox.addEventListener("click", showHideKeys);
 volumeSlider.addEventListener("input", handleVolume);
 document.addEventListener("keydown", pressedKey);
+
